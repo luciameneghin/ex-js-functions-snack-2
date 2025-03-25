@@ -15,3 +15,8 @@ console.log(sommaAnonima(7, 3));
 //funzione freccia
 const sommaFreccia = (a, b) => a + b;
 console.log(sommaFreccia(10, 7));
+
+
+//snack 2
+const quadrato = (n) => n * n;
+console.log(quadrato(4));
