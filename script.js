@@ -89,3 +89,20 @@ setTimeout(() => {
   clearInterval(intervalloSnackSei);
   console.log('Contatore snack 6: Sono passati 5 secondi');
 }, 5000);
+
+
+//snack 7
+function eseguiEferma(messaggio, play, stop) {
+  setTimeout(() => {
+    const intervalloSnackSette = setInterval(() => {
+      console.log(messaggio);
+    }, 1000);
+
+    setTimeout(() => {
+      clearInterval(intervalloSnackSette);
+      console.log('Snack 7: stop!');
+    }, stop);
+  }, play);
+};
+
+eseguiEferma('Snack 7: esegui e ferma', 2000, 10000);
