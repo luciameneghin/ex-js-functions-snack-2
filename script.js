@@ -42,7 +42,7 @@ console.log(eseguiOperazione(10, 3, sottrai));
 function creaTimer(tempo) {
   return function () {
     setTimeout(() => {
-      console.log('Tempo scaduto!');
+      console.log(`--- Timer snack 4: Tempo scaduto!---`);
     }, tempo);
   }
 }
@@ -54,7 +54,7 @@ timer();
 function stampaOgniSecondo() {
   let i = 1;
   const intervallo = setInterval(() => {
-    console.log(i);
+    console.log(`Contatore snack 5: ${i} secondi`);
     i++;
   }, 1000);
 
@@ -65,10 +65,27 @@ const intervallo = stampaOgniSecondo();
 
 setTimeout(() => {
   clearInterval(intervallo);
-  console.log('Sono passati 5 secondi');
+  console.log('Snack 5: stop!');
 }, 5000);
 
 
-
-
 //snack 6
+function creaContatoreAutomatico(ms) {
+  let contatore = 0;
+  return function () {
+    const intervalloSnackSei = setInterval(() => {
+      contatore++;
+      console.log(`Contatore snack 6: ${contatore} secondi`);
+    }, ms);
+
+    return intervalloSnackSei;
+  }
+}
+
+const avviaContatore = creaContatoreAutomatico(1000);
+const intervalloSnackSei = avviaContatore();
+
+setTimeout(() => {
+  clearInterval(intervalloSnackSei);
+  console.log('Contatore snack 6: Sono passati 5 secondi');
+}, 5000);
