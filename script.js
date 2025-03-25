@@ -1,5 +1,6 @@
 //snack 1
 //funzione dichiarativa
+
 function sommaDichiarativa(a, b) {
   return a + b;
 }
@@ -35,3 +36,39 @@ console.log(eseguiOperazione(2, 3, moltiplica));
 
 const sottrai = (x, y) => x - y;
 console.log(eseguiOperazione(10, 3, sottrai));
+
+
+//snack 4
+function creaTimer(tempo) {
+  return function () {
+    setTimeout(() => {
+      console.log('Tempo scaduto!');
+    }, tempo);
+  }
+}
+const timer = creaTimer(5000);
+timer();
+
+
+//snack 5
+function stampaOgniSecondo() {
+  let i = 1;
+  const intervallo = setInterval(() => {
+    console.log(i);
+    i++;
+  }, 1000);
+
+  return intervallo;
+}
+
+const intervallo = stampaOgniSecondo();
+
+setTimeout(() => {
+  clearInterval(intervallo);
+  console.log('Sono passati 5 secondi');
+}, 5000);
+
+
+
+
+//snack 6
